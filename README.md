@@ -16,7 +16,7 @@ pip install montecarlo
 ## Usage (Die Class)
 
 ```python
-from montecarlo import Die, Game, Analyzer
+from montecarlo.montecarlo import Die, Game, Analyzer
 
 #Create an array of faces to pass to Die object
 a = np.array([1,2,3,4,5,6])
