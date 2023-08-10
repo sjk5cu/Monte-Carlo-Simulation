@@ -69,6 +69,10 @@ analyzer.permu_count()
 ```
 
 ## Docstrings
+
+```python
+help(Die)
+```
 ```python
 class Die(builtins.object)
  |  Die(sides)
@@ -98,6 +102,9 @@ class Die(builtins.object)
  |  __weakref__
  |      list of weak references to the object (if defined)
 
+```
+```python
+help(Game)
 ```
 
 ```python
@@ -129,7 +136,9 @@ class Game(builtins.object)
  |  __weakref__
  |      list of weak references to the object (if defined)
 ```
-
+```python
+help(Analyzer)
+```
 ```python
 class Analyzer(builtins.object)
  |  Analyzer(gameObject)
