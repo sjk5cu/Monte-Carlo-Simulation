@@ -74,6 +74,8 @@ analyzer.permu_count()
 help(Die)
 ```
 ```python
+Help on class Die in module montecarlo.montecarlo:
+
 class Die(builtins.object)
  |  Die(sides)
  |  
@@ -97,17 +99,28 @@ class Die(builtins.object)
  |  change_weights(self, side, new_weight: int)
  |      A function to change one weight of the generalized die. Takes two arguments: the side to be changed, and the new weight
  |  
-...
+ |  roll_dice(self, n_rolls=1)
+ |      a function to roll the generalized die. Takes an argument n_rolls and returns a list of the output
+ |  
+ |  show_die(self)
+ |      Function to return the copy of the die dataframe showing sides and weights
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
  |  
  |  __weakref__
  |      list of weak references to the object (if defined)
-
 ```
 ```python
 help(Game)
 ```
 
 ```python
+Help on class Game in module montecarlo.montecarlo:
+
 class Game(builtins.object)
  |  Game(list_of_dice: list)
  |  
@@ -131,15 +144,41 @@ class Game(builtins.object)
  |      Inputs
  |      -----------
  |      list_of_dice = list of Die objects. Must be list. No default value
-...
+ |  
+ |  play(self, trials: int)
+ |      Method to play a game for a given number of trials
+ |      
+ |      Inputs
+ |      -------
+ |      trials: integer of how many rolls each die will be rolled.
+ |      
+ |      Stores results in object attribute and returns a copy
+ |  
+ |  show_results(self, format='wide')
+ |      Method to show results of the game. Returns a dataframe of the results
+ |      
+ |      Input
+ |      -------
+ |      format: str value. Can be wide or narrow. 
+ |      
+ |      Returns a dataframe of the game results
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
  |  
  |  __weakref__
  |      list of weak references to the object (if defined)
+
 ```
 ```python
 help(Analyzer)
 ```
 ```python
+Help on class Analyzer in module montecarlo.montecarlo:
+
 class Analyzer(builtins.object)
  |  Analyzer(gameObject)
  |  
@@ -154,8 +193,8 @@ class Analyzer(builtins.object)
  |  --------------
  |  jackpot(): returns the number of jackpots, where jackpot is defined as the same face for all die cast in the same roll. All 1's, for example.
  |  face_counts(): returns a dataframe of each face count present per roll
- |  combo_count(): Computes the combinations of each roll and stores it in a dataframe
- |  permu_count(): Computes the permutations of each roll and stores it in a dataframe
+ |  combo_count(): Computes the distinct combinations for each game and stores it in a dataframe
+ |  permu_count(): Computes the distinct permutations for each game and stores it in a dataframe
  |  
  |  Methods defined here:
  |  
@@ -163,7 +202,24 @@ class Analyzer(builtins.object)
  |      Initializes an Analyzer object. Takes a single Game object as a parameter
  |      
  |      Input: a Game object. Must be a game object.
-...
+ |  
+ |  combo_count(self)
+ |      Computes distinct combinations of faces rolled along with their counts. Returns a dataframe of results
+ |  
+ |  face_counts(self)
+ |      Computes how many times a given face is rolled in each event. Returns a dataframe of results
+ |  
+ |  jackpot(self)
+ |      Returns the number of jackpots in a given game. Jackpot is defined as all 1's on a roll, for example.
+ |  
+ |  permu_count(self)
+ |      Computes distinct permutations of faces rolled along with their counts. Returns a dataframe of results
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
  |  
  |  __weakref__
  |      list of weak references to the object (if defined)
